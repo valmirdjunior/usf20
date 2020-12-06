@@ -1,0 +1,17 @@
+Atenção:
+
+--->> Para que o relatório seja executado deve ser seguido os seguintes passos.
+
+Pegar a pasta relatorios e colar na repartição C:
+
+
+caminho: Meu computador -->> C: --->> colar.
+
+
+Boa sorte!
+
+
+Dentro do Projeto na pasta "Dist" fica localizado o executavel. Se quiser que o mesmo
+fique na area de trabalho do seu pc --->> somente copiar e colar.
+
+O banco de dados deve ser instalado em sua maquina por uma IDE de preferencia sua.

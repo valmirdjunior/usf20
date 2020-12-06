@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Veiculos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b5c88095-e9f8-4ed3-90a5-1244c4ffbc6e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     veiculos.`codigo` AS veiculos_codigo,
+     veiculos.`Placa` AS veiculos_Placa,
+     veiculos.`DataEntrada` AS veiculos_DataEntrada,
+     veiculos.`DataSaida` AS veiculos_DataSaida,
+     veiculos.`Obs` AS veiculos_Obs
+FROM
+     `veiculos` veiculos]]>
+	</queryString>
+	<field name="veiculos_codigo" class="java.lang.Integer"/>
+	<field name="veiculos_Placa" class="java.lang.String"/>
+	<field name="veiculos_DataEntrada" class="java.lang.String"/>
+	<field name="veiculos_DataSaida" class="java.lang.String"/>
+	<field name="veiculos_Obs" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="167" y="33" width="225" height="18" uuid="75fc6a91-bc5b-42c7-92b0-a6c5966d370a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório Veiculos Cadastrados]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="74" width="554" height="1" uuid="5b3a464f-42b0-482f-9f99-6517273cddcb"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="150" y="12" width="100" height="20" uuid="ff92e208-e6b1-4312-8ca0-b82660e44a1c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="10" width="139" height="20" forecolor="#FF0000" uuid="cf4123f4-2470-45e7-905f-a584e06998e1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Emissão Relatório]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="42" width="554" height="1" uuid="b5964596-dd56-4ee4-93ff-8502d613a39c"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="78" height="20" uuid="82b708b3-5627-4efa-9739-47ddf6f5251e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Veiculo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="2" width="100" height="20" uuid="fee7fd4c-3ef5-4c15-971e-c3d8b587b2e7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Placa Veiculo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="2" width="100" height="20" uuid="07cb76ed-1b32-454e-b830-22323b98f178"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="2" width="100" height="20" uuid="3c095762-5386-4f25-9ed7-e3d5878daec8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="655d5d17-344d-4a0c-a916-75a6e2301969"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observações]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="45" height="20" uuid="aad9b619-0b6b-453b-b815-b0949ce7d175"/>
+				<textFieldExpression><![CDATA[$F{veiculos_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="71" height="20" uuid="d9623dc9-84e8-44e0-ae5c-791718f0f53e"/>
+				<textFieldExpression><![CDATA[$F{veiculos_Placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="0" width="81" height="20" uuid="2493667d-626e-4ebe-b3ae-83cf1f5f5a1a"/>
+				<textFieldExpression><![CDATA[$F{veiculos_DataEntrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="75" height="20" uuid="35169257-89a1-454d-95c2-e3e302337355"/>
+				<textFieldExpression><![CDATA[$F{veiculos_DataSaida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="07e141a9-f2e4-4e9c-83be-b6f6521f59df"/>
+				<textFieldExpression><![CDATA[$F{veiculos_Obs}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="194" y="43" width="188" height="20" uuid="e0d8b2bb-f10f-453b-b80e-f9387c620eea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone: (??) ??????? / ???????]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="21512976-3174-4658-8306-82d00a2941af"/>
+			</line>
+			<staticText>
+				<reportElement x="194" y="23" width="188" height="20" uuid="27043061-6094-4e8f-b9ab-c522779c6c27"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço: Rua de Santa Catarina]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
